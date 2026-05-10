@@ -4,7 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>SkyReach Groups – Reaching Beyond Limits</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=5"/>
+<link rel="icon" type="image/png" sizes="180x180" href="favicon-180.png?v=5"/>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png?v=5"/>
+<link rel="shortcut icon" href="favicon-32.png?v=5"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
@@ -33,7 +38,7 @@ body{font-family:var(--font-body);background:var(--navy);color:var(--white);over
 /* HEADER */
 header{
   position:fixed;top:0;left:0;right:0;z-index:999;
-  padding:0 5%;height:70px;
+  padding:0 5%;height:100px;
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(6,13,31,0.92);
   backdrop-filter:blur(18px);
@@ -41,10 +46,12 @@ header{
   transition:box-shadow 0.3s;
 }
 header.scrolled{box-shadow:0 4px 40px rgba(0,0,0,0.45)}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.brand-logo{width:42px;height:42px;border-radius:10px;overflow:hidden;flex-shrink:0;background:#000;}
+.brand{display:flex;align-items:center;gap:18px;text-decoration:none}
+.brand-logo{width:92px;height:92px;border-radius:18px;overflow:hidden;flex-shrink:0;background:#000;}
 .brand-logo img{width:100%;height:100%;object-fit:cover}
 .brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text strong{font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);}
+.brand-text span{font-size:0.75rem;font-weight:500;color:var(--blue-light);letter-spacing:1.3px;text-transform:uppercase;}
 .brand-text strong{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);}
 .brand-text span{font-size:0.6rem;font-weight:500;color:var(--blue-light);letter-spacing:1.2px;text-transform:uppercase;}
 nav ul{list-style:none;display:flex;align-items:center;gap:6px}
@@ -120,7 +127,8 @@ section{padding:96px 6%}
 .about-pillars{display:flex;flex-direction:column;gap:16px}
 .pillar{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);transition:all 0.3s;}
 .pillar:hover{background:rgba(26,127,212,0.08);border-color:rgba(26,127,212,0.25);transform:translateX(5px)}
-.pillar-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
+.pillar-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0;}
+.pillar-icon svg{width:20px;height:20px;color:#fff;stroke-width:2;}
 .pillar-text h4{font-size:0.97rem;font-weight:700;margin-bottom:3px}
 .pillar-text p{font-size:0.84rem;color:rgba(255,255,255,0.52);line-height:1.6}
 .about-right{display:flex;flex-direction:column;gap:18px;}
@@ -141,14 +149,18 @@ section{padding:96px 6%}
 .services-category{margin-bottom:52px}
 .services-category:last-child{margin-bottom:0}
 .cat-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid rgba(26,127,212,0.25);width:100%;}
-.cat-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:0.95rem;}
+.cat-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:0;box-shadow:0 4px 12px rgba(26,127,212,0.25);}
+.cat-icon svg{width:20px;height:20px;color:#fff;stroke-width:2.5;}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
 .svc-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;transition:all 0.35s cubic-bezier(0.23,1,0.32,1);position:relative;overflow:hidden;cursor:pointer;}
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transform-origin:left;transition:transform 0.35s cubic-bezier(0.23,1,0.32,1);}
 .svc-card:hover{border-color:rgba(26,127,212,0.45);transform:translateY(-6px) scale(1.02);box-shadow:0 16px 44px rgba(26,127,212,0.2);}
 .svc-card:hover::after{transform:scaleX(1)}
-.svc-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(26,127,212,0.15),rgba(79,179,246,0.08));border:1px solid rgba(26,127,212,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;transition:all 0.35s;box-shadow:0 4px 12px rgba(26,127,212,0.1);}
-.svc-card:hover .svc-icon{background:linear-gradient(135deg,var(--blue),var(--blue-light));border-color:transparent;box-shadow:0 6px 20px rgba(26,127,212,0.35);transform:scale(1.08);}
+.svc-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(26,127,212,0.12),rgba(79,179,246,0.06));border:1.5px solid rgba(26,127,212,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all 0.35s cubic-bezier(0.23,1,0.32,1);box-shadow:0 4px 16px rgba(26,127,212,0.08);position:relative;overflow:hidden;}
+.svc-icon svg{width:24px;height:24px;stroke-width:2;color:var(--blue-light);transition:all 0.35s cubic-bezier(0.23,1,0.32,1);}
+.svc-icon::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue),var(--blue-light));opacity:0;border-radius:16px;transition:opacity 0.35s cubic-bezier(0.23,1,0.32,1);z-index:-1;}
+.svc-card:hover .svc-icon{background:linear-gradient(135deg,var(--blue),var(--blue-light));border-color:rgba(26,127,212,0.5);box-shadow:0 8px 28px rgba(26,127,212,0.4);transform:scale(1.1);}
+.svc-card:hover .svc-icon svg{color:#fff;filter:drop-shadow(0 2px 8px rgba(26,127,212,0.5));}
 .svc-card h3{font-size:0.98rem;font-weight:700;margin-bottom:8px;line-height:1.3;}
 .svc-card p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.65;}
 
@@ -254,7 +266,7 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
 <body>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919360376531" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.523 5.824L.057 23.428a.5.5 0 0 0 .615.615l5.604-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.518-5.204-1.42l-.372-.217-3.862 1.01 1.01-3.862-.217-.372A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
   </svg>
@@ -277,21 +289,21 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="nav-cta">Get Started</a></li>
+      <li><a href="https://wa.me/919360376531" target="_blank" class="nav-cta">Get Started</a></li>
     </ul>
   </nav>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </header>
-
+--
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home" onclick="closeMenu()">🏠 Home</a>
   <a href="#about" onclick="closeMenu()">💡 About</a>
   <a href="#services" onclick="closeMenu()">🛠 Services</a>
   <a href="#contact" onclick="closeMenu()">📬 Contact</a>
-  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="m-cta" onclick="closeMenu()">🚀 Get Started on WhatsApp</a>
+  <a href="https://wa.me/919360376531" target="_blank" class="m-cta" onclick="closeMenu()">🚀 Get Started on WhatsApp</a>
 </div>
 
 <!-- HERO -->
@@ -306,7 +318,7 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
     </h1>
     <p class="hero-sub">SkyReach Groups is your end-to-end digital partner — from creative design and compelling content to powerful marketing and online business growth. We turn ideas into impact.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-glow">
+      <a href="https://wa.me/919360376531" target="_blank" class="btn-glow">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.523 5.824L.057 23.428a.5.5 0 0 0 .615.615l5.604-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.518-5.204-1.42l-.372-.217-3.862 1.01 1.01-3.862-.217-.372A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Get Started on WhatsApp
       </a>
@@ -337,11 +349,11 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
       <br/>
       <div class="about-pillars">
         <div class="pillar">
-          <div class="pillar-icon">🎯</div>
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8m-4-4h8"/></svg></div>
           <div class="pillar-text"><h4>Result-Driven Approach</h4><p>Every strategy we build is tied to real, measurable outcomes — more leads, more sales, more visibility.</p></div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">💡</div>
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
           <div class="pillar-text"><h4>Creative Digital Solutions</h4><p>From stunning graphics to viral-worthy content, we craft work that captures attention and converts.</p></div>
         </div>
         <div class="pillar">
@@ -349,7 +361,7 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
           <div class="pillar-text"><h4>Premium Yet Affordable</h4><p>Agency-quality output without the agency price tag. Quality work that respects your budget.</p></div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">🤝</div>
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <div class="pillar-text"><h4>Long-Term Partnership</h4><p>We act as an extension of your team, invested in your success as much as you are.</p></div>
         </div>
       </div>
@@ -382,45 +394,45 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
 
   <!-- ROW 1: Creative Brand Studio -->
   <div class="services-category reveal">
-    <div class="cat-label"><div class="cat-icon">🎨</div> Creative Brand Studio</div>
+    <div class="cat-label"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m0 18a9 9 0 0 1-9-9m9 9c2.209 0 4-4.477 4-10s-1.791-10-4-10m0 20c-2.209 0-4-4.477-4-10s1.791-10 4-10m0 20v-2m0-16v-2"/></svg></div> Creative Brand Studio</div>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon">✍️</div><h3>SEO Content Strategy</h3><p>Engaging blog posts, SEO articles, website copy, and brand storytelling that keeps readers hooked and ranks on Google.</p></div>
-      <div class="svc-card"><div class="svc-icon">🎨</div><h3>Brand Visual Design</h3><p>Eye-catching logos, banners, social media posts, and brand kits that make your identity unforgettable.</p></div>
-      <div class="svc-card"><div class="svc-icon">🎬</div><h3>Video Production Studio</h3><p>Professional editing for reels, YouTube, ads and brand films — with motion graphics and perfect pacing.</p></div>
-      <div class="svc-card"><div class="svc-icon">🎙️</div><h3>Audio Branding Studio</h3><p>Broadcast-quality podcast editing and professional voice-over recordings to amplify your voice and reach.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><h3>SEO Content Strategy</h3><p>Engaging blog posts, SEO articles, website copy, and brand storytelling that keeps readers hooked and ranks on Google.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="19" r="1"/><circle cx="5" cy="5" r="1"/><path d="M12 12m-8 0a8 8 0 0 0 0 0"/><path d="m6.5 7.5 3 3"/><path d="m10.5 10.5 3 3"/><path d="m14.5 14.5 3 3"/></svg></div><h3>Brand Visual Design</h3><p>Eye-catching logos, banners, social media posts, and brand kits that make your identity unforgettable.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>Video Production Studio</h3><p>Professional editing for reels, YouTube, ads and brand films — with motion graphics and perfect pacing.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div><h3>Audio Branding Studio</h3><p>Broadcast-quality podcast editing and professional voice-over recordings to amplify your voice and reach.</p></div>
     </div>
   </div>
 
   <!-- ROW 2: Growth Marketing Engine -->
   <div class="services-category reveal">
-    <div class="cat-label"><div class="cat-icon">📈</div> Growth Marketing Engine</div>
+    <div class="cat-label"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 17"/><polyline points="17 6 23 6 23 12"/></svg></div> Growth Marketing Engine</div>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon">📱</div><h3>Social Media Growth Management</h3><p>Strategic content calendars, daily posting, community management, and engagement growth across all platforms.</p></div>
-      <div class="svc-card"><div class="svc-icon">📣</div><h3>Paid Ads Performance Marketing</h3><p>High-ROI paid campaigns on Meta, Google, and YouTube — precise targeting, compelling creatives, measurable results.</p></div>
-      <div class="svc-card"><div class="svc-icon">🔍</div><h3>Search Visibility Optimization</h3><p>Technical SEO, keyword research, on-page optimization, and backlink building to dominate search results.</p></div>
-      <div class="svc-card"><div class="svc-icon">🤝</div><h3>Revenue Partnership Marketing</h3><p>Build and scale affiliate programs that generate passive income through strategic partnerships and promotions.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Social Media Growth Management</h3><p>Strategic content calendars, daily posting, community management, and engagement growth across all platforms.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="12 2 12 9"/><polyline points="4 12 20 12"/><path d="M8 12l-2.5 7.5"/><path d="M16 12l2.5 7.5"/></svg></div><h3>Paid Ads Performance Marketing</h3><p>High-ROI paid campaigns on Meta, Google, and YouTube — precise targeting, compelling creatives, measurable results.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Search Visibility Optimization</h3><p>Technical SEO, keyword research, on-page optimization, and backlink building to dominate search results.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Revenue Partnership Marketing</h3><p>Build and scale affiliate programs that generate passive income through strategic partnerships and promotions.</p></div>
     </div>
   </div>
 
   <!-- ROW 3: Business Expansion Solutions -->
   <div class="services-category reveal">
-    <div class="cat-label"><div class="cat-icon">🚀</div> Business Expansion Solutions</div>
+    <div class="cat-label"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 17v5m-3-2h6"/></svg></div> Business Expansion Solutions</div>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon">📍</div><h3>Local Presence Optimization</h3><p>Complete GMB setup, optimization, and management to get your business discovered in local searches and maps.</p></div>
-      <div class="svc-card"><div class="svc-icon">🛒</div><h3>eCommerce Launch Solutions</h3><p>End-to-end e-commerce setup — listings, product pages, payment gateways, and marketplace onboarding.</p></div>
-      <div class="svc-card"><div class="svc-icon">🎓</div><h3>Digital Course Launch System</h3><p>From platform setup to content packaging and marketing — we help you launch and sell your knowledge online.</p></div>
-      <div class="svc-card"><div class="svc-icon">🤖</div><h3>AI Chatbot Automation</h3><p>24/7 smart customer support bots for websites, WhatsApp, Instagram, and lead generation funnels.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Local Presence Optimization</h3><p>Complete GMB setup, optimization, and management to get your business discovered in local searches and maps.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>eCommerce Launch Solutions</h3><p>End-to-end e-commerce setup — listings, product pages, payment gateways, and marketplace onboarding.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 0-2 2"/></svg></div><h3>Digital Course Launch System</h3><p>From platform setup to content packaging and marketing — we help you launch and sell your knowledge online.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4v.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="1"/></svg></div><h3>AI Chatbot Automation</h3><p>24/7 smart customer support bots for websites, WhatsApp, Instagram, and lead generation funnels.</p></div>
     </div>
   </div>
 
   <!-- ROW 4: Digital Product & Web Solutions -->
   <div class="services-category reveal">
-    <div class="cat-label"><div class="cat-icon">💻</div> Digital Product &amp; Web Solutions</div>
+    <div class="cat-label"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div> Digital Product &amp; Web Solutions</div>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon">🌐</div><h3>Premium Website Design</h3><p>Modern responsive business websites, landing pages, eCommerce stores, and conversion-focused pages built to impress.</p></div>
-      <div class="svc-card"><div class="svc-icon">💻</div><h3>Custom Web Development</h3><p>Frontend + backend web applications, admin dashboards, booking systems, CRM tools, and scalable solutions.</p></div>
-      <div class="svc-card"><div class="svc-icon">🎯</div><h3>UI/UX Experience Design</h3><p>Wireframes, app design, user journeys, mobile-first layouts, clean interfaces, and smooth user experiences.</p></div>
-      <div class="svc-card"><div class="svc-icon">🤖</div><h3>AI Business Solutions</h3><p>AI chatbots, workflow automation, lead capture systems, smart customer support, and productivity tools.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Premium Website Design</h3><p>Modern responsive business websites, landing pages, eCommerce stores, and conversion-focused pages built to impress.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Custom Web Development</h3><p>Frontend + backend web applications, admin dashboards, booking systems, CRM tools, and scalable solutions.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8m-4-4h8"/></svg></div><h3>UI/UX Experience Design</h3><p>Wireframes, app design, user journeys, mobile-first layouts, clean interfaces, and smooth user experiences.</p></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg></div><h3>AI Business Solutions</h3><p>AI chatbots, workflow automation, lead capture systems, smart customer support, and productivity tools.</p></div>
     </div>
   </div>
 </section>
@@ -439,7 +451,7 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
           </div>
           <div><div class="cl-sub">Email Us</div>skyreachgroupsofficial@gmail.com</div>
         </a>
-        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-link">
+        <a href="https://wa.me/919360376531" target="_blank" class="contact-link">
           <div class="cl-icon cl-wa">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.523 5.824L.057 23.428a.5.5 0 0 0 .615.615l5.604-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.518-5.204-1.42l-.372-.217-3.862 1.01 1.01-3.862-.217-.372A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           </div>
@@ -504,7 +516,7 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
 <div class="cta-banner reveal">
   <h2>Ready to Skyrocket Your Business?</h2>
   <p>Join 50+ brands that have transformed their digital presence with SkyReach Groups. Let's build something extraordinary together.</p>
-  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-white">
+  <a href="https://wa.me/919360376531" target="_blank" class="btn-white">
     Start Today on WhatsApp
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
@@ -558,14 +570,14 @@ footer{background:#030810;border-top:1px solid rgba(255,255,255,0.05);padding:64
       <h4>Contact</h4>
       <ul>
         <li><a href="https://mail.google.com/mail/?view=cm&to=skyreachgroupsofficial@gmail.com" target="_blank">skyreachgroupsofficial@gmail.com</a></li>
-        <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp Us</a></li>
+        <li><a href="https://wa.me/919360376531" target="_blank">WhatsApp Us</a></li>
         <li><a href="https://instagram.com/the_skyreach_groups" target="_blank">Instagram</a></li>
         <li><a href="https://linkedin.com/in/the-skyreach-groups-40b218406" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 SkyReach Groups. All Rights Reserved.</p>
+    <p>© 2026 SkyReach Groups. All Rights Reserved.</p>
     <span>Made with ❤️ for bold brands</span>
   </div>
 </footer>
@@ -689,6 +701,16 @@ function submitForm() {
     btn.disabled = false;
     btn.textContent = 'Send Message ';
   });
+}
+
+// Initialize Lucide Icons
+if (typeof lucide !== 'undefined') {
+  lucide.createIcons();
+  // Re-initialize icons when new elements are added dynamically
+  const observer = new MutationObserver(function() {
+    lucide.createIcons();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 </script>
 </body>
